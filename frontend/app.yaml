@@ -1,0 +1,15 @@
+# App Engine standard environment untuk frontend statis Asclepius
+runtime: nodejs24
+
+handlers:
+  # Halaman utama
+  - url: /
+    static_files: index.html
+    upload: index.html
+    secure: always
+
+  # Seluruh aset statis (src/, favicon.png, dll.)
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
+    secure: always
